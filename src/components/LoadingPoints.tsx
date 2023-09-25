@@ -1,8 +1,5 @@
 import React from "react";
-import { Button, Checkbox, Form, Input } from "antd";
-import { getPoints } from "../API/api";
-import { useAppDispatch } from "../hook";
-
+import { Button, Form, Input } from "antd";
 const onFinishFailed = (errorInfo: any) => {
   console.log("Failed:", errorInfo);
 };

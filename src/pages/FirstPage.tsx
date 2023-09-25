@@ -1,5 +1,5 @@
-import React, { FC, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../hook";
+import React, { FC } from "react";
+import { useAppSelector } from "../hook";
 
 import MySelect from "../components/MySelect";
 import { Brigade } from "../store/firstPageSlice";
@@ -52,7 +52,6 @@ const FirstPage: FC = () => {
           onChange={selectDepartments}
         />
       </Space>
-
       {loadingItems ? (
         <div className="spinContainer">
           <Spin size="large" />

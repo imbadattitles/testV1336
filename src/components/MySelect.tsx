@@ -14,6 +14,7 @@ const MySelect: React.FC<IMySelectProps> = ({
   items,
 }) => (
   <Select
+    allowClear
     placeholder={placeholder}
     onChange={onChange}
     options={items.map((item) => {
