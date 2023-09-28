@@ -1,10 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { useAppSelector } from "../hook";
 
 import MySelect from "../components/MySelect";
 import { Brigade } from "../store/firstPageSlice";
 import { Col, Row, Space, Spin } from "antd";
 import MyCard from "../components/MyCard";
+import { Filtering } from "../lib/Filtering";
 
 const FirstPage: FC = () => {
   const connectionState = useAppSelector(
@@ -19,18 +20,6 @@ const FirstPage: FC = () => {
     null
   );
   const loadingItems = useAppSelector((state) => state.first.loadingBrigades);
-  const Filtering = (item: Brigade, value: number | null, type: string) => {
-    switch (type) {
-      case "connection":
-        if (value === 0) return item.connectionStateId === value;
-        if (value) return item.connectionStateId === value;
-        else return true;
-      case "department":
-        if (value === 0) return item.department.id === value;
-        if (value) return item.department.id === value;
-        else return true;
-    }
-  };
 
   const selectConnection = (value: number) => {
     setChooseConnection(value);
